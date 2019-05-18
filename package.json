@@ -7,7 +7,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "npm run dev && concurrently \"http-server -a localhost -p 129 -c1 -o http://localhost:129/test/index.html\" ",
+    "start": "npm run dev && concurrently \"http-server -a localhost -p 129 -c1 -o http://localhost:129/test/index.html\" ",
     "dev": "webpack --mode development ./lib/virama.js --output ./dist/virama.js",
     "build": "webpack --mode production  ./lib/virama.js --output ./dist/virama.min.js"
   },
