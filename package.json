@@ -9,7 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --mode development ./lib/virama.js --output ./dist/virama.js",
-    "build": "webpack --mode production  ./lib/virama.js --output ./dist/virama.min.js",
+    "build": "webpack --mode production  ./lib/virama.js --output ./dist/virama.min.js"
   },
   "repository": {
     "type": "git",
