@@ -1,8 +1,11 @@
 {
   "name": "Virama-JS",
   "version": "1.0.0",
-  "description": "",
+  "description": "Another default myanmar font detector and Zawgyi <=> Unicode Converter for nodejs.",
   "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,9 +13,15 @@
     "type": "git",
     "url": "git+https://github.com/thixpin/Virama-JS.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "font-detector",
+    "myanmar-font",
+    "text-converter",
+    "zawgyi-unicode-converter",
+    "myanmar-font-converter"
+  ],
+  "author": "thixpin",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/thixpin/Virama-JS/issues"
   },
