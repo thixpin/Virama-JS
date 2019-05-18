@@ -15,6 +15,9 @@
     "type": "git",
     "url": "git+https://github.com/thixpin/Virama-JS.git"
   },
+  "engines": {
+    "node": ">= 6.9.0"
+  },
   "keywords": [
     "font-detector",
     "myanmar-font",
