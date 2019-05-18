@@ -25,5 +25,9 @@
   "bugs": {
     "url": "https://github.com/thixpin/Virama-JS/issues"
   },
-  "homepage": "https://github.com/thixpin/Virama-JS#readme"
+  "homepage": "https://github.com/thixpin/Virama-JS#readme",
+  "devDependencies": {
+    "webpack": "^4.31.0",
+    "webpack-cli": "^3.3.2"
+  }
 }
