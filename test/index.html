@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Testing Virama-JS</title>
+<style>
+  body, container{
+  	text-align: center;
+  }
+  .container{
+  	max-width: 800px;
+    margin: 0 auto;
+    font-family: myanmar3;
+  }
+  .row{
+    padding-top: 20px;
+  	width: 100%;
+    text-align: left;
+    white-space: nowrap;
+    border-bottom:cornflowerblue 1px solid;
+  }
+  .col{
+    display: inline-block; 
+    width: 50%;
+    white-space: normal;
+    text-align: left;
+    padding-left: 15px;
+  }
+  .zg {
+  	font-family: Zawgyi-One;
+    color: #f00;
+  }
+  .uni {
+  	font-family: myanmar3;
+    color: #00f;
+  }
+  .virama, input, textarea{
+    font-family: initial;
+  }
+
+  input {
+    line-height: 1.2em;
+    width: 90%;
+    margin: auto;
+  }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Testing Virama in <span id="head"></span> Broser</h1>
+  <p> Browser မှာ လက်ရှိ သတ်မှတ်ထားတဲ့ဖောင့်က <span id="current"></span> ဖြစ်ပါတယ်။  
+    Browser Font Setting ထဲမှာ <span id="next"></span> ကိုသတ်မှတ်ပြီး နောက်တစ်ကြိမ်စမ်းသပ်၍ ကွာခြားတဲ့ ရလဒ်များကို ကြည့်ရှုနိုင်ပါတယ်။</p>
+  
+  <div class="row">
+      <div class="col"><h3>Testing Functions</h3></div>
+      <div class="col"><h3>Result Output</h3></div>
+  </div>
+
+  <div class="row">
+        <div class="col" id="t01"></div>
+        <div class="col" id="r01"></div>
+    </div>
+  
+  <div class="row">
+      <div class="col" id="t02"></div>
+      <div class="col" id="r02"></div>
+  </div>
+  
+  <div class="row">
+      <div class="col" id="t03"></div>
+      <div class="col" id="r03"></div>
+  </div>
+  
+  <div class="row">
+      <div class="col" id="t04"></div>
+      <div class="col" id="r04"></div>
+  </div>
+  
+  <div class="row">
+      <div class="col" id="t05"></div>
+      <div class="col" id="r05"></div>
+  </div>
+  
+  <div class="row">
+      <div class="col" id="t06"></div>
+      <div class="col" id="r06"></div>
+  </div>
+  
+  <div class="row">
+      <div class="col" id="t07"></div>
+      <div class="col" id="r07"></div>
+  </div>
+  
+</div>
+
+</body>
+<script src="../dist/virama.js"></script>
+<script src="./test.js"></script>
+
+</html>

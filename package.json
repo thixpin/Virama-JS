@@ -7,7 +7,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run dev && concurrently \"http-server -a localhost -p 129 -c1 -o http://localhost:129/test/index.html\" ",
     "dev": "webpack --mode development ./lib/virama.js --output ./dist/virama.js",
     "build": "webpack --mode production  ./lib/virama.js --output ./dist/virama.min.js"
   },
@@ -29,6 +29,8 @@
   },
   "homepage": "https://github.com/thixpin/Virama-JS#readme",
   "devDependencies": {
+    "concurrently": "^4.1.0",
+    "http-server": "^0.11.1",
     "webpack": "^4.31.0",
     "webpack-cli": "^3.3.2"
   }
