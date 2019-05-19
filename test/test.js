@@ -29,6 +29,7 @@ function tester (id, fn, input) {
     if(fn == 'read'){
         var elm = document.getElementById('r'+id);
         elm.style.fontFamily = "initial";
+        elm.style.color = '#f00';
     }
 }
 
