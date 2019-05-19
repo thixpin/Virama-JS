@@ -1,6 +1,6 @@
 {
   "name": "virama-js",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Another default myanmar font detector and Zawgyi <=> Unicode Converter for nodejs.",
   "main": "index.js",
   "directories": {
