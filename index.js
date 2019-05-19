@@ -1,1 +1,1 @@
-module.exports = require('./lib/bunny.js');
+module.exports = require('./lib/virama.js');
