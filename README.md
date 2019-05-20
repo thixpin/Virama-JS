@@ -4,6 +4,7 @@
 
 [![Build Status](https://travis-ci.org/thixpin/Virama-JS.svg?branch=master)](https://travis-ci.org/thixpin/Virama-JS)
 [![NPM version](https://img.shields.io/npm/v/virama-js.svg)](https://www.npmjs.com/package/virama-js)
+[![NPM downloads](https://img.shields.io/npm/dm/virama-js.svg)](https://www.npmjs.com/package/virama-js)
 
 
 **Myanmar font (browser default font) detector and Zawgyi <=> Unicode Converter for nodejs.**
