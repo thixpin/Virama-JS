@@ -2,12 +2,12 @@
 
 ![Logo](https://www.mmunicode.org/wp-content/uploads/2017/07/mua_small.png)
 
-[![Build Status](https://travis-ci.org/thixpin/Virama-JS.svg?branch=master)](https://travis-ci.org/thixpin/Virama-JS)
-[![NPM version](https://img.shields.io/npm/v/virama-js.svg)](https://www.npmjs.com/package/virama-js)
-[![NPM downloads](https://img.shields.io/npm/dm/virama-js.svg)](https://www.npmjs.com/package/virama-js)
-[![DEPENDENCIES](https://david-dm.org/thixpin/virama-js/status.svg)](https://david-dm.org/thixpin/virama-js)
-[![devDependencies](https://david-dm.org/thixpin/virama-js/dev-status.svg)](https://david-dm.org/thixpin/virama-js?type=dev)
 
+[![NPM version](https://img.shields.io/npm/v/virama-js.svg)](https://www.npmjs.com/package/virama-js)
+[![NPM downloads](https://img.shields.io/npm/dt/virama-js.svg)](https://npm-stat.com/charts.html?package=virama-js)
+[![DEPENDENCIES](https://david-dm.org/thixpin/virama-js/status.svg)](https://david-dm.org/thixpin/virama-js)
+![Scrutinizer code quality (GitHub/Bitbucket)](https://img.shields.io/scrutinizer/quality/g/thixpin/Virama-JS.svg)
+[![Build Status](https://scrutinizer-ci.com/g/thixpin/Virama-JS/badges/build.png?b=master)](https://scrutinizer-ci.com/g/thixpin/Virama-JS/build-status/master)
 
 
 **Myanmar font (browser default font) detector and Zawgyi <=> Unicode Converter for nodejs.**
