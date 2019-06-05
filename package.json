@@ -1,6 +1,6 @@
 {
   "name": "virama-js",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Another default myanmar font detector and Zawgyi <=> Unicode Converter for nodejs.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "test": "jest --config jestconfig.json",
-    "webtest": "npm run wpdev && npm run wpmin && concurrently \"http-server -a localhost -p 129 -c1 -o http://localhost:129/test/index.html\" ",
+    "webtest": "npm run build && npm run wpdev && npm run wpmin && concurrently \"http-server -a localhost -p 129 -c1 -o http://localhost:129/test/index.html\" ",
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",

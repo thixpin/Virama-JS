@@ -21,15 +21,18 @@ const addTestDivToBody = () => {
 };
 
 const detectBrowserFont = (): string => {
-  let testDiv = document.getElementById(testerID);
-  if (testDiv) testDiv.style.display = '';
+  const testDiv = document.getElementById(testerID);
+  if (testDiv) {
+    testDiv.style.display = '';
+  }
+  const oneKa = document.getElementById('one_ka');
+  const twoKa = document.getElementById('two_ka');
 
-  let one_ka = document.getElementById('one_ka');
-  let two_ka = document.getElementById('two_ka');
-
-  if (one_ka && two_ka) {
-    browserFont = one_ka.offsetWidth * 1.5 > two_ka.offsetWidth ? 'Unicode' : 'Zawgyi';
-    if (testDiv) testDiv.style.display = 'none';
+  if (oneKa && twoKa) {
+    browserFont = oneKa.offsetWidth * 1.5 > twoKa.offsetWidth ? 'Unicode' : 'Zawgyi';
+    if (testDiv) {
+      testDiv.style.display = 'none';
+    }
   }
 
   return browserFont;
@@ -45,15 +48,15 @@ const init = async () => {
 };
 init();
 
-const replace_with_rule = (rule: any[], output: string): string => {
-  const max_loop = rule.length;
-  for (let i = 0; i < max_loop; i++) {
+const replaceWithRule = (rule: any[], output: string): string => {
+  const maxLoop = rule.length;
+  for (let i = 0; i < maxLoop; i++) {
     const data = rule[i];
-    const from = data['from'];
-    const to = data['to'];
+    const from = data.from;
+    const to = data.to;
 
-    const from_regex = new RegExp(from, 'g');
-    output = output.replace(from_regex, to);
+    const fromRegex = new RegExp(from, 'g');
+    output = output.replace(fromRegex, to);
   }
 
   return output;
@@ -69,7 +72,9 @@ export const isMyanmarText = (text: string): boolean => {
 };
 
 export const uni2zg = (output: string): string => {
-  if (!isMyanmarText(output)) return output;
+  if (!isMyanmarText(output)) {
+    return output;
+  }
 
   const rule = [
     {
@@ -381,11 +386,13 @@ export const uni2zg = (output: string): string => {
       to: '\u102C$1\u1094',
     },
   ];
-  return replace_with_rule(rule, output);
+  return replaceWithRule(rule, output);
 };
 
 export const zg2uni = (output: string): string => {
-  if (!isMyanmarText(output)) return output;
+  if (!isMyanmarText(output)) {
+    return output;
+  }
 
   const rule = [
     {
@@ -853,11 +860,13 @@ export const zg2uni = (output: string): string => {
       to: '\u103d\u1036',
     },
   ];
-  return replace_with_rule(rule, output);
+  return replaceWithRule(rule, output);
 };
 
 const uniNormalize = (output: string): string => {
-  if (!isMyanmarText(output)) return output;
+  if (!isMyanmarText(output)) {
+    return output;
+  }
 
   const rule = [
     {
@@ -877,11 +886,11 @@ const uniNormalize = (output: string): string => {
       to: '\u102D\u102F',
     },
   ];
-  return replace_with_rule(rule, output);
+  return replaceWithRule(rule, output);
 };
 
 export const isUnicodeUser = (): boolean => {
-  return getBrowserFont() == 'Unicode';
+  return getBrowserFont() === 'Unicode';
 };
 
 export const textToWrite = (output: string): string => {
@@ -893,11 +902,11 @@ export const textToRead = (output: string): string => {
 };
 
 export const Virama = {
-  getBrowserFont: getBrowserFont,
-  isUnicodeUser: isUnicodeUser,
-  uni2zg: uni2zg,
-  zg2uni: zg2uni,
-  textToRead: textToRead,
-  textToWrite: textToWrite,
-  isMyanmarText: isMyanmarText,
+  getBrowserFont,
+  isMyanmarText,
+  isUnicodeUser,
+  textToRead,
+  textToWrite,
+  uni2zg,
+  zg2uni,
 };
