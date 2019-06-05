@@ -5,3 +5,8 @@ node_js:
 
 notifications:
   - email: true
+  
+scripts:
+  - npm install codecov -g
+after_success:
+  - codecov
