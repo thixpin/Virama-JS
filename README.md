@@ -28,7 +28,7 @@ npm install virama-js --save
 Using CDN:
 
 ```html
-<script src="https://unpkg.com/virama-js@1.0.3/dist/virama.min.js"></script>
+<script src="https://unpkg.com/virama-js@1.0.4/dist/virama.min.js"></script>
 ```
 
 ## Usage
@@ -39,15 +39,15 @@ var Virama = require("virama-js");
 
 
 
-Virama.write("ပြည်ထောင်စုဖောင့်");
+Virama.textToWrite("ပြည်ထောင်စုဖောင့်");
 // Output4ZawgyiUser: ပွညျထောငျစုဖောငျ့ 
 // Output4UniUser: ပြည်ထောင်စုဖောင့်
 
-Virama.write("ျပည္ေထာင္စုေဖာင့္");
+Virama.textToWrite("ျပည္ေထာင္စုေဖာင့္");
 // Output4ZawgyiUser: ပြည်ထောင်စုဖောင့်
 // Output4UniUser: ျပည္ေထာင္စုေဖာင့္
 
-Virama.read("ပြည်ထောင်စုဖောင့်");
+Virama.textToRead("ပြည်ထောင်စုဖောင့်");
 // Output4ZawgyiUser: ျပည္ေထာင္စုေဖာင့္
 // Output4UniUser: ပြည်ထောင်စုဖောင့်
 
@@ -66,6 +66,16 @@ Virama.isUnicodeUser();
 // Output4UniUser: true
 
 ```
+
+
+## Change Log
+
+### v1.0.4
+
+1. used `typescript`
+2. changed   `Virama.`write`()` to `Virama.`textToWrite`()`
+3. changed   `Virama.`read`()` to `Virama.`textToRead`()`
+
 
 ## Contributing
 
