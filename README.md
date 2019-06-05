@@ -7,7 +7,8 @@
 [![NPM downloads](https://img.shields.io/npm/dt/virama-js.svg)](https://npm-stat.com/charts.html?package=virama-js)
 [![DEPENDENCIES](https://david-dm.org/thixpin/virama-js/status.svg)](https://david-dm.org/thixpin/virama-js)
 ![Scrutinizer code quality (GitHub/Bitbucket)](https://img.shields.io/scrutinizer/quality/g/thixpin/Virama-JS.svg)
-[![Build Status](https://scrutinizer-ci.com/g/thixpin/Virama-JS/badges/build.png?b=master)](https://scrutinizer-ci.com/g/thixpin/Virama-JS/build-status/master)
+[![Build Status](https://api.travis-ci.org/thixpin/Virama-JS.svg?branch=master)](https://travis-ci.org/thixpin/Virama-JS)
+[![Coverage](https://codecov.io/gh/thixpin/Virama-JS/branch/master/graphs/badge.svg)](https://codecov.io/gh/thixpin/Virama-JS)
 
 
 **Myanmar font (browser default font) detector and Zawgyi <=> Unicode Converter for nodejs.**
