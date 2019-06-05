@@ -8,20 +8,6 @@
     "lib/**/*",
     "dist/**/*"
   ],
-  "scripts": {
-    "test": "jest --config jestconfig.json",
-    "webtest": "npm run build && npm run wpdev && npm run wpmin && concurrently \"http-server -a localhost -p 129 -c1 -o http://localhost:129/test/index.html\" ",
-    "build": "tsc",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-    "lint": "tslint -p tsconfig.json",
-    "prepare": "npm run build   && npm run  wpdev && npm run wpmin",
-    "prepublishOnly": "npm test && npm run lint",
-    "preversion": "npm run lint",
-    "version": "npm run format && git add -A src",
-    "postversion": "git push && git push --tags",
-    "wpdev": "webpack --mode development ./lib/virama.js --output ./dist/virama.js",
-    "wpmin": "webpack --mode production  ./lib/virama.js --output ./dist/virama.min.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thixpin/Virama-JS.git"
@@ -52,5 +38,19 @@
     "typescript": "^3.5.1",
     "webpack": "^4.32.2",
     "webpack-cli": "^3.3.2"
+  },
+  "scripts": {
+    "test": "jest --config jestconfig.json",
+    "webtest": "npm run build && npm run wpdev && npm run wpmin && concurrently \"http-server -a localhost -p 129 -c1 -o http://localhost:129/test/index.html\" ",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build   && npm run  wpdev && npm run wpmin",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags",
+    "wpdev": "webpack --mode development ./lib/virama.js --output ./dist/virama.js",
+    "wpmin": "webpack --mode production  ./lib/virama.js --output ./dist/virama.min.js"
   }
 }
