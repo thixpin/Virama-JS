@@ -7,7 +7,7 @@
 [![NPM downloads](https://img.shields.io/npm/dt/virama-js.svg)](https://npm-stat.com/charts.html?package=virama-js)
 [![DEPENDENCIES](https://david-dm.org/thixpin/virama-js/status.svg)](https://david-dm.org/thixpin/virama-js)
 [![Build Status](https://scrutinizer-ci.com/g/thixpin/Virama-JS/badges/build.png?b=master)](https://scrutinizer-ci.com/g/thixpin/Virama-JS/build-status/master)
-![Scrutinizer code quality (GitHub/Bitbucket)](https://img.shields.io/scrutinizer/quality/g/thixpin/Virama-JS.svg)
+[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/quality/g/thixpin/Virama-JS.svg)](https://scrutinizer-ci.com/g/thixpin/Virama-JS/?branch=master)
 [![Coverage](https://codecov.io/gh/thixpin/Virama-JS/branch/master/graphs/badge.svg)](https://codecov.io/gh/thixpin/Virama-JS)
 
 
