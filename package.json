@@ -1,11 +1,12 @@
 {
   "name": "virama-js",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Another default myanmar font detector and Zawgyi <=> Unicode Converter for nodejs.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
-    "lib/**/*"
+    "lib/**/*",
+    "dist/**/*"
   ],
   "scripts": {
     "test": "jest --config jestconfig.json",

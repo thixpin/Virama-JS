@@ -28,7 +28,7 @@ npm install virama-js --save
 Using CDN:
 
 ```html
-<script src="https://unpkg.com/virama-js@1.0.4/dist/virama.min.js"></script>
+<script src="https://unpkg.com/virama-js@1.0.5/dist/virama.min.js"></script>
 ```
 
 ## Usage
