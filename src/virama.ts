@@ -903,6 +903,7 @@ export const textToRead = (output: string): string => {
 
 export const Virama = {
   getBrowserFont,
+  init,
   isMyanmarText,
   isUnicodeUser,
   textToRead,

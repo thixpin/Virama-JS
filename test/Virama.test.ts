@@ -40,6 +40,14 @@ test('Writing Text',()=>{
   expect(Virama.textToWrite(zgText)).toBe(uniText);
 });
 
+test('Writing eng Text',()=>{
+  expect(Virama.textToWrite('English text')).toBe('English text');
+});
+
 test('Reading Text',()=>{
   expect(Virama.textToRead(uniText)).toBe(zgText);
+});
+
+test('Init Re Check',()=>{
+  expect(Virama.init()).resolves;
 });

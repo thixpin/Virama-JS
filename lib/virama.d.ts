@@ -7,6 +7,7 @@ export declare const textToWrite: (output: string) => string;
 export declare const textToRead: (output: string) => string;
 export declare const Virama: {
     getBrowserFont: () => string;
+    init: () => Promise<void>;
     isMyanmarText: (text: string) => boolean;
     isUnicodeUser: () => boolean;
     textToRead: (output: string) => string;
