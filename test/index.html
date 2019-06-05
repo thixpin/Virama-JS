@@ -98,6 +98,53 @@
 
 </body>
 <script src="../dist/virama.js"></script>
-<script src="./test.js"></script>
+<script>
+
+var uniText = 'ပြည်ထောင်စု သင်္ကြန်';
+var zgText = 'ျပည္ေထာင္စု သၾကၤန္';
+
+function add2id(id,text){
+    var elm = document.getElementById(id);
+    elm.innerHTML = text;
+}
+
+function tester (id, fn, input) {
+    
+    if(input){
+        var fnText = 'Virama.'+fn+'("'+input+'");';
+    } else {
+        var fnText = 'Virama.'+fn+'();';
+    }
+    add2id('t'+id,fnText);
+
+    if(input){
+        var result = Virama[fn](input);
+    } else {
+        var result = Virama[fn]();
+    }
+
+    add2id('r'+id, result);
+
+    if(fn == 'read'){
+        var elm = document.getElementById('r'+id);
+        elm.style.fontFamily = "initial";
+        elm.style.color = '#f00';
+    }
+}
+
+tester('01', 'getBrowserFont', false);
+tester('02', 'isUnicodeUser', false);
+tester('03', 'textToWrite', zgText);
+tester('04', 'textToWrite', uniText);
+tester('05', 'textToRead', uniText);
+tester('06', 'uni2zg', uniText);
+tester('07', 'zg2uni', zgText);
+
+add2id('current', Virama.getBrowserFont());
+add2id('head', Virama.getBrowserFont());
+add2id('next', Virama.isUnicodeUser() ? "Zawgyi-One" : 'Unicode');
+
+
+</script>
 
 </html>

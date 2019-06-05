@@ -1,63 +1,86 @@
-"use strict";
 // class Virama {
-Object.defineProperty(exports, "__esModule", { value: true });
-const testerID = 'fontTester';
-let browserFont;
+
+const testerID: string = 'fontTester';
+let browserFont: string;
+
+
 const addTestDivToBody = () => {
-    const newDiv = document.createElement('div');
-    newDiv.style.cssText = 'position:absolute;width:100%;opacity:0.3;z-index:-10; top: -50px; height: 20px; display: none';
-    newDiv.id = testerID;
-    const spanCss = 'font-family: initial; margin: 0; padding: 0; font-size: 20px; line-height: 20px; height: 20px;';
-    const testSpans = '<span style="' + spanCss + '" id="one_ka">&#x1000;</span>\n' +
-        '<span style="' + spanCss + '" id="two_ka">&#x1000;&#x1039;&#x1000;</span>\n';
-    newDiv.innerHTML = testSpans;
-    document.body.appendChild(newDiv);
-    return true;
-};
-const detectBrowserFont = () => {
+
+        const newDiv = document.createElement('div');
+        newDiv.style.cssText = 'position:absolute;width:100%;opacity:0.3;z-index:-10; top: -50px; height: 20px; display: none';
+        newDiv.id = testerID;
+        const spanCss    = 'font-family: initial; margin: 0; padding: 0; font-size: 20px; line-height: 20px; height: 20px;';
+        const testSpans  = '<span style="'+spanCss+'" id="one_ka">&#x1000;</span>\n' + 
+                            '<span style="'+spanCss+'" id="two_ka">&#x1000;&#x1039;&#x1000;</span>\n';
+        newDiv.innerHTML = testSpans;
+        document.body.appendChild(newDiv);
+
+        return true;
+    
+}
+    
+const detectBrowserFont =  (): string =>{
+
     let testDiv = document.getElementById(testerID);
-    if (testDiv)
-        testDiv.style.display = '';
-    let one_ka = document.getElementById('one_ka');
-    let two_ka = document.getElementById('two_ka');
-    if (one_ka && two_ka) {
-        browserFont = (one_ka.offsetWidth * 1.5 > two_ka.offsetWidth) ? 'Unicode' : 'Zawgyi';
-        if (testDiv)
-            testDiv.style.display = 'none';
-    }
-    return browserFont;
-};
-const init = () => {
-    if (document.getElementById(testerID)) {
+    if(testDiv) testDiv.style.display = '';
+    
+        let one_ka = document.getElementById('one_ka') ;
+        let two_ka = document.getElementById('two_ka') ;
+      
+        if(one_ka && two_ka){
+            browserFont  = (one_ka.offsetWidth * 1.5 > two_ka.offsetWidth ) ? 'Unicode' : 'Zawgyi';
+            if(testDiv) testDiv.style.display = 'none';
+        } 
+        
+        return browserFont;
+        
+    
+}
+
+const init = async () =>{
+    if(document.getElementById(testerID)){ 
+        browserFont = detectBrowserFont();
+    } else {
+        await addTestDivToBody();
         browserFont = detectBrowserFont();
     }
-    else {
-        addTestDivToBody();
-        browserFont = detectBrowserFont();
-    }
-};
+}
 init();
-const replace_with_rule = (rule, output) => {
+    
+
+const replace_with_rule = (rule: any[], output: string): string =>{
+
     const max_loop = rule.length;
-    for (let i = 0; i < max_loop; i++) {
+    for(let i=0; i < max_loop; i++) {
+
         const data = rule[i];
         const from = data["from"];
         const to = data["to"];
-        const from_regex = new RegExp(from, "g");
+
+        const from_regex = new RegExp(from,"g");
         output = output.replace(from_regex, to);
     }
+
     return output;
-};
-exports.getBrowserFont = () => {
+    
+}
+
+
+export const getBrowserFont = (): string =>{
     return browserFont;
-};
-exports.isMyanmarText = (text) => {
-    const MyanmarReg = new RegExp("[\u1000-\u1021]");
-    return MyanmarReg.test(text) ? true : false;
-};
-exports.uni2zg = (output) => {
-    if (!exports.isMyanmarText(output))
-        return output;
+}
+
+
+export const isMyanmarText = (text: string ): boolean =>{
+        const MyanmarReg = new RegExp("[\u1000-\u1021]");
+        return MyanmarReg.test(text) ? true : false;
+}
+
+
+export const uni2zg = (output: string): string =>{
+
+    if(!isMyanmarText(output)) return output;
+
     const rule = [
         {
             "from": "\u1004\u103a\u1039",
@@ -108,8 +131,8 @@ exports.uni2zg = (output) => {
             "to": "\u108f"
         },
         {
-            "from": "\u1014\u103c",
-            "to": "\u108f\u103c"
+                "from" : "\u1014\u103c",
+                "to" : "\u108f\u103c"
         },
         {
             "from": "\u1039\u1000",
@@ -352,23 +375,26 @@ exports.uni2zg = (output) => {
             "to": "$1\u1095"
         },
         {
-            "from": "\u108F\u1071",
-            "to": "\u108F\u1072"
+        "from": "\u108F\u1071",
+            "to" : "\u108F\u1072"
         },
         {
-            "from": "([\u1000-\u1021])([\u107B\u1066])\u102C",
-            "to": "$1\u102C$2"
+        "from": "([\u1000-\u1021])([\u107B\u1066])\u102C",
+        "to": "$1\u102C$2"
         },
         {
-            "from": "\u102C([\u107B\u1066])\u1037",
-            "to": "\u102C$1\u1094"
+        "from": "\u102C([\u107B\u1066])\u1037",
+        "to": "\u102C$1\u1094"
         }
     ];
     return replace_with_rule(rule, output);
-};
-exports.zg2uni = (output) => {
-    if (!exports.isMyanmarText(output))
-        return output;
+    }
+    
+
+export const zg2uni = (output: string): string =>{
+
+    if(!isMyanmarText(output)) return output;
+
     const rule = [
         {
             "from": "\u102f\u102f",
@@ -836,10 +862,13 @@ exports.zg2uni = (output) => {
         }
     ];
     return replace_with_rule(rule, output);
-};
-const uniNormalize = (output) => {
-    if (!exports.isMyanmarText(output))
-        return output;
+}
+
+
+const uniNormalize = (output: string): string => {
+
+    if(!isMyanmarText(output)) return output;
+
     const rule = [
         {
             "from": "\u1025\u1013",
@@ -859,17 +888,27 @@ const uniNormalize = (output) => {
         }
     ];
     return replace_with_rule(rule, output);
-};
-exports.isUnicodeUser = () => {
-    return (exports.getBrowserFont() == 'Unicode');
-};
-exports.textToWrite = (output) => {
-    return exports.isUnicodeUser() ? uniNormalize(output) : uniNormalize(exports.zg2uni(output));
-};
-exports.textToRead = (output) => {
-    return exports.isUnicodeUser() ? output : exports.uni2zg(output);
-};
+}
+
+
+export const isUnicodeUser = (): boolean =>{
+        return (getBrowserFont() == 'Unicode') ;
+}
+    
+
+export const textToWrite = (output: string): string => {
+        return isUnicodeUser() ? uniNormalize(output) : uniNormalize(zg2uni(output));
+}
+
+
+export const textToRead = (output: string): string => {
+        return isUnicodeUser() ? output : uni2zg(output);
+}
+
 //  }
+
+
+
 // isUnicodeUser,
 // uni2zg,
 // zg2uni,
@@ -877,13 +916,17 @@ exports.textToRead = (output) => {
 // textToWrite,
 // isMyanmarText,
 // }
-exports.Virama = {
-    "getBrowserFont": exports.getBrowserFont,
-    "isUnicodeUser": exports.isUnicodeUser,
-    "uni2zg": exports.uni2zg,
-    "zg2uni": exports.zg2uni,
-    "textToRead": exports.textToRead,
-    "textToWrite": exports.textToWrite,
-    "isMyanmarText": exports.isMyanmarText
-};
-//export const Virama = new ViramaClass('fontTester','');
+
+export const Virama = {
+    "getBrowserFont": getBrowserFont,
+    "isUnicodeUser":   isUnicodeUser,
+    "uni2zg":    uni2zg,
+    "zg2uni":    zg2uni,
+    "textToRead":    textToRead,
+    "textToWrite":    textToWrite,
+    "isMyanmarText": isMyanmarText
+}
+
+ //export const Virama = new ViramaClass('fontTester','');
+ 
+ 
