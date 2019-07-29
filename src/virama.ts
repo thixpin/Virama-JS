@@ -122,7 +122,7 @@ export const uni2zg = (output: string): string => {
       to: '$1\u1034',
     },
     {
-      from: '\u1014(?=[\u102d\u102e]?[\u1030\u103d\u103e\u102f\u1039])',
+      from: '\u1014(?=[\u102d\u102e\u103a]?[\u102f\u1030\u103d\u103e\u1039])',
       to: '\u108f',
     },
     {
@@ -370,8 +370,8 @@ export const uni2zg = (output: string): string => {
       to: '$1\u107d',
     },
     {
-      from: '([\u1033\u1034])\u1094',
-      to: '$1\u1095',
+      from: '([\u1033\u1034])(\u1036?)\u1094',
+      to: '$1$2\u1095',
     },
     {
       from: '\u108F\u1071',
