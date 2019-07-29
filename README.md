@@ -71,6 +71,10 @@ Virama.isUnicodeUser();
 
 ## Change Log
 
+### v1.0.6
+
+1. Update uni2zg rule for converter
+
 ### v1.0.4
 
 1. used `typescript`
